@@ -104,6 +104,8 @@ The student's screenshot visibly confirms the default Django success page at the
 
 The student also supplied request logs: GET / returned HTTP 200 at 08:18:42, confirming a successful homepage response; GET /favicon.ico returned HTTP 404 at 08:18:43 because no tab icon was available. These lines are preserved in the server output file. The missing icon does not prevent the default success page from working. The development-server warning is expected for this local assignment.
 
+The student supplied a separate terminal screenshot, saved as [Documents/django-terminal-success.png](Documents/django-terminal-success.png). It visibly shows the active virtual environment, Django 6.1.1, project creation command, successful system check, development server address, and HTTP 200 homepage request. The original Desktop image was preserved. Browser and terminal evidence are now both saved as separate screenshots; a single screenshot showing both windows together remains pending for the assignment's requested format.
+
 ## Remaining assignment checkpoints
 
 - [x] Step 7: Generate `django_project` in this directory and examine the generated files.
@@ -113,6 +115,7 @@ The student also supplied request logs: GET / returned HTTP 200 at 08:18:42, con
 - [ ] Step 10: Stop the server, deactivate, reactivate, restart, and verify the page again.
 
 These checkpoints remain pending until actually performed. Git records saved files and commits, not terminal history automatically. Update this log as the student completes each step.
+
 
 
 
