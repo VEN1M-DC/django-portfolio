@@ -79,12 +79,28 @@ sqlparse==0.6.0
 tzdata==2026.4
 ```
 
+## 7. Django project creation — complete
+
+The student ran these commands in the active virtual environment:
+
+```powershell
+django-admin startproject django_project .
+dir
+```
+
+The command completed without an error. The assistant verified `manage.py` and the generated `django_project` package containing `__init__.py`, `settings.py`, `urls.py`, `asgi.py`, and `wsgi.py`. `manage.py` references `django_project.settings`. The generated files have been left unchanged, as the assignment requests.
+
+The trailing dot creates the project in the current repository directory. `manage.py` runs Django management commands; `settings.py` holds project configuration; `urls.py` maps URLs; `asgi.py` and `wsgi.py` are server entry points; `__init__.py` marks the Python package.
+
+Server startup and browser verification remain pending.
+
 ## Remaining assignment checkpoints
 
-- [ ] Step 7: Generate `django_project` in this directory and examine the generated files.
+- [x] Step 7: Generate `django_project` in this directory and examine the generated files.
 - [ ] Step 8: Start the development server and verify the default success page.
 - [ ] Capture a screenshot showing the running terminal server and browser success page; save it in the repository for submission.
 - [ ] Step 9: Commit the working Django project, push to GitHub, and verify the remote files exclude `djvenv`.
 - [ ] Step 10: Stop the server, deactivate, reactivate, restart, and verify the page again.
 
 These checkpoints remain pending until actually performed. Git records saved files and commits, not terminal history automatically. Update this log as the student completes each step.
+
