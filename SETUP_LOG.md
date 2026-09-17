@@ -113,7 +113,7 @@ The student subsequently supplied the combined screenshot [Documents/django-serv
 - [x] Step 7: Generate `django_project` in this directory and examine the generated files.
 - [x] Step 8: Start the development server and verify the default success page.
 - [x] Capture a screenshot showing the running terminal server and browser success page; save it in the repository for submission.
-- [ ] Step 9: Commit the working Django project, push to GitHub, and verify the remote files exclude `djvenv`.
+- [x] Step 9: Commit the working Django project, push to GitHub, and verify the remote files exclude `djvenv`.
 - [x] Step 10: Stop the server, deactivate, reactivate, restart, and verify the page again.
 
 These checkpoints remain pending until actually performed. Git records saved files and commits, not terminal history automatically. Update this log as the student completes each step.
@@ -166,3 +166,9 @@ The student's screenshot, preserved in [Documents/django-restart-success.png](Do
 The 18 unapplied migrations warning remains visible; no migration command was performed as part of this setup record. Earlier pending restart notes describe previous progress and are superseded by this result.
 
 The setup and restart evidence is complete. The latest log updates and restart screenshot must still be pushed. The student has not yet reported the assignment's final browser inspection of the GitHub file listing.
+
+## Final GitHub verification — complete
+
+The student's final push output confirmed `939cbcd..c211f91 main -> main`. The subsequent GitHub browser screenshot shows repository `VEN1M-DC/django-portfolio` on `main`, commit `c211f91`, and the expected root entries: `Documents`, `django_project`, `.gitignore`, `SETUP_LOG.md`, `manage.py`, and `requirements.txt`. The virtual environment `djvenv` is absent. The screenshot is preserved as [Documents/github-verification.png](Documents/github-verification.png).
+
+All assignment setup checkpoints are complete. Earlier pending-status notes are historical and are superseded by the completed checkpoints and this final verification. This final evidence update is being committed and pushed as the closing documentation change.
