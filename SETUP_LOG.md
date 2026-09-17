@@ -150,3 +150,11 @@ git push -u origin main
 ```
 
 The push remains pending until its result is supplied. Restart practice also remains pending.
+
+### First GitHub push — complete
+
+The student ran `git branch -M main` and `git push -u origin main`. Git reported a successful new branch push (`main -> main`) to https://github.com/VEN1M-DC/django-portfolio.git and configured local `main` to track `origin/main`.
+
+After the push, the assistant verified local `main` matched the local remote-tracking reference `origin/main`. Its file tree includes the generated Django project, `manage.py`, `.gitignore`, `requirements.txt`, this log, the assignment document, server output, and all three screenshots. The virtual environment `djvenv` is absent from that tree. This verification uses the remote-tracking commit and the student's successful push output; browser inspection of GitHub has not yet been reported.
+
+The student should open the GitHub repository to confirm these files are visible online. Step 10 stop/deactivate/reactivate/restart practice remains pending. This log update will need to be included in a subsequent push along with the restart results.
