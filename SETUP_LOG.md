@@ -92,15 +92,24 @@ The command completed without an error. The assistant verified `manage.py` and t
 
 The trailing dot creates the project in the current repository directory. `manage.py` runs Django management commands; `settings.py` holds project configuration; `urls.py` maps URLs; `asgi.py` and `wsgi.py` are server entry points; `__init__.py` marks the Python package.
 
-Server startup and browser verification remain pending.
+Server startup and browser verification were subsequently completed in step 8 below.
+
+## 8. Development server and browser verification — complete
+
+The student ran `python manage.py runserver` in the active environment. The supplied output reports zero system-check issues, Django 6.1.1, and a running development server at http://127.0.0.1:8000/ on September 17, 2026, at 08:17:38.
+
+The complete supplied startup output is saved in [Documents/server-startup-output.txt](Documents/server-startup-output.txt). It includes a warning about 18 unapplied migrations for admin, auth, contenttypes, and sessions, plus the standard development-server warning. No migrations have been reported as applied.
+
+The student's screenshot visibly confirms the default Django success page at the local server address. A copy of the original screenshot is saved as [Documents/django-browser-success.png](Documents/django-browser-success.png). The original Desktop file was preserved. The screenshot shows the browser only; the assignment's screenshot showing both the running terminal and browser is still pending.
 
 ## Remaining assignment checkpoints
 
 - [x] Step 7: Generate `django_project` in this directory and examine the generated files.
-- [ ] Step 8: Start the development server and verify the default success page.
+- [x] Step 8: Start the development server and verify the default success page.
 - [ ] Capture a screenshot showing the running terminal server and browser success page; save it in the repository for submission.
 - [ ] Step 9: Commit the working Django project, push to GitHub, and verify the remote files exclude `djvenv`.
 - [ ] Step 10: Stop the server, deactivate, reactivate, restart, and verify the page again.
 
 These checkpoints remain pending until actually performed. Git records saved files and commits, not terminal history automatically. Update this log as the student completes each step.
+
 
