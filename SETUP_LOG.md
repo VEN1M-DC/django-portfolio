@@ -106,15 +106,18 @@ The student also supplied request logs: GET / returned HTTP 200 at 08:18:42, con
 
 The student supplied a separate terminal screenshot, saved as [Documents/django-terminal-success.png](Documents/django-terminal-success.png). It visibly shows the active virtual environment, Django 6.1.1, project creation command, successful system check, development server address, and HTTP 200 homepage request. The original Desktop image was preserved. Browser and terminal evidence are now both saved as separate screenshots; a single screenshot showing both windows together remains pending for the assignment's requested format.
 
+The student subsequently supplied the combined screenshot [Documents/django-server-success.png](Documents/django-server-success.png), showing the browser success page and the running PowerShell server side by side. The system check, server address, Django version, and successful homepage request are visible. This completes the screenshot checkpoint. Earlier notes about the combined screenshot being pending describe the previous state; the original Desktop screenshots remain preserved.
+
 ## Remaining assignment checkpoints
 
 - [x] Step 7: Generate `django_project` in this directory and examine the generated files.
 - [x] Step 8: Start the development server and verify the default success page.
-- [ ] Capture a screenshot showing the running terminal server and browser success page; save it in the repository for submission.
+- [x] Capture a screenshot showing the running terminal server and browser success page; save it in the repository for submission.
 - [ ] Step 9: Commit the working Django project, push to GitHub, and verify the remote files exclude `djvenv`.
 - [ ] Step 10: Stop the server, deactivate, reactivate, restart, and verify the page again.
 
 These checkpoints remain pending until actually performed. Git records saved files and commits, not terminal history automatically. Update this log as the student completes each step.
+
 
 
 
