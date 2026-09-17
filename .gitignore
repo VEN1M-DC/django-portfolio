@@ -1,0 +1,7 @@
+djvenv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.kilo/
+.env
+db.sqlite3
