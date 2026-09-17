@@ -137,3 +137,16 @@ git ls-remote origin
 ```
 
 Repair and remote verification are pending the student's results. No GitHub push has been performed.
+
+### Ownership repair and remote verification — complete
+
+The student ran the project-specific `safe.directory` command in their own PowerShell account, then repeated the checks. `git status` reported `On branch master` and `nothing to commit, working tree clean`. `git remote -v` confirmed https://github.com/VEN1M-DC/django-portfolio.git for both fetch and push. `git ls-remote origin` returned no refs and no error, indicating the remote is empty and ready for the first push.
+
+Next commands for the student:
+
+```powershell
+git branch -M main
+git push -u origin main
+```
+
+The push remains pending until its result is supplied. Restart practice also remains pending.
