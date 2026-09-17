@@ -114,7 +114,7 @@ The student subsequently supplied the combined screenshot [Documents/django-serv
 - [x] Step 8: Start the development server and verify the default success page.
 - [x] Capture a screenshot showing the running terminal server and browser success page; save it in the repository for submission.
 - [ ] Step 9: Commit the working Django project, push to GitHub, and verify the remote files exclude `djvenv`.
-- [ ] Step 10: Stop the server, deactivate, reactivate, restart, and verify the page again.
+- [x] Step 10: Stop the server, deactivate, reactivate, restart, and verify the page again.
 
 These checkpoints remain pending until actually performed. Git records saved files and commits, not terminal history automatically. Update this log as the student completes each step.
 
@@ -158,3 +158,11 @@ The student ran `git branch -M main` and `git push -u origin main`. Git reported
 After the push, the assistant verified local `main` matched the local remote-tracking reference `origin/main`. Its file tree includes the generated Django project, `manage.py`, `.gitignore`, `requirements.txt`, this log, the assignment document, server output, and all three screenshots. The virtual environment `djvenv` is absent from that tree. This verification uses the remote-tracking commit and the student's successful push output; browser inspection of GitHub has not yet been reported.
 
 The student should open the GitHub repository to confirm these files are visible online. Step 10 stop/deactivate/reactivate/restart practice remains pending. This log update will need to be included in a subsequent push along with the restart results.
+
+## 10. Environment restart practice — complete
+
+The student's screenshot, preserved in [Documents/django-restart-success.png](Documents/django-restart-success.png), shows Ctrl+C, `deactivate`, a prompt without `(djvenv)`, activation using `.\djvenv\Scripts\Activate.ps1`, and `python manage.py runserver`. The new server startup at 08:31:17 reports no system-check issues. A new GET / request at 08:31:30 returned HTTP 200, and the browser visibly displays the Django success page. The screenshot supports successful deactivation, reactivation, and restart; the original server shutdown itself is not shown because Ctrl+C appears at a shell prompt.
+
+The 18 unapplied migrations warning remains visible; no migration command was performed as part of this setup record. Earlier pending restart notes describe previous progress and are superseded by this result.
+
+The setup and restart evidence is complete. The latest log updates and restart screenshot must still be pushed. The student has not yet reported the assignment's final browser inspection of the GitHub file listing.
