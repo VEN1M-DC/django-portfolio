@@ -122,3 +122,18 @@ These checkpoints remain pending until actually performed. Git records saved fil
 
 
 
+
+## Step 9 troubleshooting: Git ownership check
+
+The student ran `git status`, `git remote -v`, and `git ls-remote origin` from the project directory. Git blocked access with a dubious-ownership error: `.git` belongs to `CodexSandboxOffline`, while the student's terminal runs as `VEN1M`. The repository was originally initialized by the assistant's sandbox account. The subsequent remote lookup also failed; remote access has not yet been verified.
+
+The recommended repair is to run the following in the student's own PowerShell window, trusting only this project directory:
+
+```powershell
+git config --global --add safe.directory C:/Users/VEN1M/OneDrive/Desktop/django-portfolio
+git status
+git remote -v
+git ls-remote origin
+```
+
+Repair and remote verification are pending the student's results. No GitHub push has been performed.
