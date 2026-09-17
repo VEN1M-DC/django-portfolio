@@ -13,3 +13,10 @@ Starting WSGI development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
 For more information on production servers see: https://docs.djangoproject.com/en/6.1/howto/deployment/
+
+Additional student-provided server output:
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.1/howto/deployment/
+[17/Sep/2026 08:18:42] "GET / HTTP/1.1" 200 12149
+Not Found: /favicon.ico
+[17/Sep/2026 08:18:43] "GET /favicon.ico HTTP/1.1" 404 2288

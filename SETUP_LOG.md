@@ -102,6 +102,8 @@ The complete supplied startup output is saved in [Documents/server-startup-outpu
 
 The student's screenshot visibly confirms the default Django success page at the local server address. A copy of the original screenshot is saved as [Documents/django-browser-success.png](Documents/django-browser-success.png). The original Desktop file was preserved. The screenshot shows the browser only; the assignment's screenshot showing both the running terminal and browser is still pending.
 
+The student also supplied request logs: GET / returned HTTP 200 at 08:18:42, confirming a successful homepage response; GET /favicon.ico returned HTTP 404 at 08:18:43 because no tab icon was available. These lines are preserved in the server output file. The missing icon does not prevent the default success page from working. The development-server warning is expected for this local assignment.
+
 ## Remaining assignment checkpoints
 
 - [x] Step 7: Generate `django_project` in this directory and examine the generated files.
@@ -111,5 +113,6 @@ The student's screenshot visibly confirms the default Django success page at the
 - [ ] Step 10: Stop the server, deactivate, reactivate, restart, and verify the page again.
 
 These checkpoints remain pending until actually performed. Git records saved files and commits, not terminal history automatically. Update this log as the student completes each step.
+
 
 
