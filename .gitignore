@@ -1,3 +1,4 @@
+```ignore
 djvenv/
 __pycache__/
 *.py[cod]
