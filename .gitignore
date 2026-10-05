@@ -1,4 +1,3 @@
-```ignore
 djvenv/
 __pycache__/
 *.py[cod]
@@ -6,3 +5,4 @@ __pycache__/
 .kilo/
 .env
 db.sqlite3
+.private/
