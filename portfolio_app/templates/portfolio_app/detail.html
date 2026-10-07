@@ -1,0 +1,7 @@
+{% extends 'portfolio_app/base.html' %}
+{% block title %}{{ portfolio.title }}{% endblock %}
+{% block content %}
+<h1>{{ portfolio.title }}</h1><p>{{ portfolio.student.name }} · {{ portfolio.student.get_major_display }}</p>
+{{ portfolio.about|linebreaks }}<p><a href="mailto:{{ portfolio.contact_email }}">{{ portfolio.contact_email }}</a></p>
+<h2>Projects</h2><div class="grid">{% for project in portfolio.projects.all %}<article><h2><a href="{{ project.get_absolute_url }}">{{ project.title }}</a></h2><p>{{ project.description|truncatewords:35 }}</p></article>{% empty %}<p>No projects have been added yet.</p>{% endfor %}</div>
+{% endblock %}

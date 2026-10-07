@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Student(models.Model):
     MAJOR = (
@@ -17,3 +18,29 @@ class Student(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Portfolio(models.Model):
+    student = models.OneToOneField(Student, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    contact_email = models.EmailField(max_length=200)
+    is_active = models.BooleanField(default=True)
+    about = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse("portfolio-detail", kwargs={"pk": self.pk})
+
+
+class Project(models.Model):
+    portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE, related_name="projects")
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse("project-detail", kwargs={"pk": self.pk})

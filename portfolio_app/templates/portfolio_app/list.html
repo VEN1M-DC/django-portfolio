@@ -1,0 +1,9 @@
+{% extends 'portfolio_app/base.html' %}
+{% block content %}
+<h1>Student portfolios</h1><p>Explore the students and projects saved in this Django application.</p>
+<div class="grid">
+{% for portfolio in portfolios %}
+<article><h2><a href="{{ portfolio.get_absolute_url }}">{{ portfolio.title }}</a></h2><p>{{ portfolio.student.name }}</p><p class="muted">{{ portfolio.student.get_major_display }}</p><p>{{ portfolio.about|truncatewords:35 }}</p></article>
+{% empty %}<p>No active portfolios have been published yet.</p>{% endfor %}
+</div>
+{% endblock %}

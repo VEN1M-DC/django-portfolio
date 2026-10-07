@@ -1,0 +1,3 @@
+{% extends 'portfolio_app/base.html' %}
+{% block title %}{{ project.title }}{% endblock %}
+{% block content %}<p><a href="{{ project.portfolio.get_absolute_url }}">Back to {{ project.portfolio.title }}</a></p><h1>{{ project.title }}</h1>{{ project.description|linebreaks }}<p class="muted">By {{ project.portfolio.student.name }}</p>{% endblock %}
