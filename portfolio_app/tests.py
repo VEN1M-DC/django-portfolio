@@ -4,6 +4,64 @@ from django.urls import reverse
 from .models import Student, Portfolio, Project
 from django.db import IntegrityError, transaction
 
+
+class PortfolioDetailViewTests(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        cls.portfolios = []
+        for name in ("Jordan", "Taylor", "Empty"):
+            student = Student.objects.create(name=name, email=f"{name.lower()}@example.com")
+            cls.portfolios.append(Portfolio.objects.create(
+                student=student, title=f"{name} portfolio",
+                about=f"About {name}", contact_email=student.email,
+            ))
+        cls.first, cls.second, cls.empty = cls.portfolios
+        cls.description = "A complete project description " + "detail " * 40 + "END OF DESCRIPTION"
+        cls.first_project = Project.objects.create(
+            portfolio=cls.first, title="Jordan project", description=cls.description,
+        )
+        cls.second_project = Project.objects.create(
+            portfolio=cls.second, title="Taylor project", description="Taylor project description",
+        )
+
+    def test_different_primary_keys_display_correct_portfolio_fields(self):
+        for portfolio in self.portfolios:
+            with self.subTest(pk=portfolio.pk):
+                response = self.client.get(portfolio.get_absolute_url())
+                self.assertEqual(response.status_code, 200)
+                self.assertTemplateUsed(response, "portfolio_app/portfolio_detail.html")
+                self.assertEqual(response.context["portfolio"], portfolio)
+                for value in (portfolio.title, portfolio.about, portfolio.contact_email, "Status:</strong> Active"):
+                    self.assertContains(response, value)
+
+    def test_only_related_projects_and_full_descriptions_are_shown(self):
+        first = self.client.get(self.first.get_absolute_url())
+        second = self.client.get(self.second.get_absolute_url())
+        self.assertContains(first, self.first_project.title)
+        self.assertContains(first, self.description)
+        self.assertNotContains(first, self.second_project.title)
+        self.assertContains(second, self.second_project.title)
+        self.assertContains(second, self.second_project.description)
+        self.assertNotContains(second, self.first_project.title)
+
+    def test_portfolio_without_projects_shows_helpful_message(self):
+        response = self.client.get(self.empty.get_absolute_url())
+        self.assertContains(response, "No projects have been added yet.")
+        self.assertNotContains(response, self.first_project.title)
+        self.assertNotContains(response, self.second_project.title)
+
+    def test_nonexistent_portfolio_returns_404(self):
+        missing_pk = max(portfolio.pk for portfolio in self.portfolios) + 100
+        self.assertEqual(self.client.get(reverse("portfolio-detail", kwargs={"pk": missing_pk})).status_code, 404)
+
+    def test_home_and_detail_navigation(self):
+        home = self.client.get(reverse("portfolio-list"))
+        for portfolio in self.portfolios:
+            with self.subTest(pk=portfolio.pk):
+                self.assertContains(home, f'href="{portfolio.get_absolute_url()}"')
+                detail = self.client.get(portfolio.get_absolute_url())
+                self.assertContains(detail, f'<a href="{reverse("portfolio-list")}">Back to all portfolios</a>', html=True)
+
 class StudentTests(TestCase):
     def test_student_persistence_and_major_query(self):
         student = Student.objects.create(name="Example Student", email="example@example.com", major="CSCI-BS")

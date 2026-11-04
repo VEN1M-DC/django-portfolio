@@ -2,6 +2,17 @@
 
 Course project with the Student model and Django admin.
 
+## GE04: Portfolio views
+
+The portfolio detail route now uses `PortfolioDetailView`, a generic Django
+`DetailView`, and `portfolio_app/portfolio_detail.html`. The page displays title,
+about, contact email, active status, and complete descriptions of related
+projects. It includes an empty-project message and a named link back home.
+Inactive portfolios remain private (404), matching the existing application.
+
+See [GE04 implementation and verification](Documents/GE04_IMPLEMENTATION.md)
+for the requirement checklist, test commands, and documentation preparation notes.
+
 ## Windows setup
 
 Use Python 3.14 (this project was verified with 3.14.7).
