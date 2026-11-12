@@ -3,6 +3,11 @@
 Verified November 12, 2026 against the course's updated Django views slides,
 parts 1–4, including portfolio creation starting on slide 56.
 
+Word documents: [workflow technical document](<L22 Django Workflow.docx>),
+[problem definition](<L22 Django Problem Definition.docx>), and
+[GE04 portfolio views](<GE04 Django Portfolio Views.docx>).
+The [complete test output](L22-test-results.txt) records the 32-test run.
+
 ## What works
 
 - List students and open the selected student's detail page.

@@ -1,0 +1,70 @@
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+Found 32 test(s).
+Operations to perform:
+  Synchronize unmigrated apps: messages, staticfiles
+  Apply all migrations: admin, auth, contenttypes, portfolio_app, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying portfolio_app.0001_initial... OK
+  Applying portfolio_app.0002_portfolio_project... OK
+test_anonymous_cannot_read_student_directory_or_modify_data (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_anonymous_cannot_read_student_directory_or_modify_data) ... ok
+test_create_portfolio_link_only_without_existing_portfolio (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_create_portfolio_link_only_without_existing_portfolio) ... ok
+test_create_two_students_redirects_to_each_new_primary_key (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_create_two_students_redirects_to_each_new_primary_key) ... ok
+test_delete_get_only_confirms_and_post_cascades (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_delete_get_only_confirms_and_post_cascades) ... ok
+test_duplicate_portfolio_rejected_without_changing_original (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_duplicate_portfolio_rejected_without_changing_original) ... ok
+test_empty_student_list (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_empty_student_list) ... ok
+test_inactive_portfolio_redirects_to_student_and_stays_private (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_inactive_portfolio_redirects_to_student_and_stays_private) ... ok
+test_invalid_portfolio_is_not_saved (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_invalid_portfolio_is_not_saved) ... ok
+test_invalid_project_does_not_save (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_invalid_project_does_not_save) ... ok
+test_invalid_student_fields_do_not_create_records (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_invalid_student_fields_do_not_create_records) ... ok
+test_invalid_update_preserves_original_data (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_invalid_update_preserves_original_data) ... ok
+test_missing_student_routes_return_404 (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_missing_student_routes_return_404) ... ok
+test_portfolio_form_has_existing_student_selection_and_initial_value (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_portfolio_form_has_existing_student_selection_and_initial_value) ... ok
+test_post_requires_csrf_token (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_post_requires_csrf_token) ... ok
+test_project_for_inactive_portfolio_redirects_to_student (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_project_for_inactive_portfolio_redirects_to_student) ... ok
+test_signed_in_user_without_permissions_is_forbidden (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_signed_in_user_without_permissions_is_forbidden) ... ok
+test_student_list_and_detail_navigation (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_student_list_and_detail_navigation) ... ok
+test_two_projects_can_belong_to_one_portfolio (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_two_projects_can_belong_to_one_portfolio) ... ok
+test_update_displays_existing_values_and_saves_selected_student (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_update_displays_existing_values_and_saves_selected_student) ... ok
+test_valid_portfolio_uses_selected_student (portfolio_app.test_workflow.StudentPortfolioWorkflowTests.test_valid_portfolio_uses_selected_student) ... ok
+test_different_primary_keys_display_correct_portfolio_fields (portfolio_app.tests.PortfolioDetailViewTests.test_different_primary_keys_display_correct_portfolio_fields) ... ok
+test_home_and_detail_navigation (portfolio_app.tests.PortfolioDetailViewTests.test_home_and_detail_navigation) ... ok
+test_nonexistent_portfolio_returns_404 (portfolio_app.tests.PortfolioDetailViewTests.test_nonexistent_portfolio_returns_404) ... ok
+test_only_related_projects_and_full_descriptions_are_shown (portfolio_app.tests.PortfolioDetailViewTests.test_only_related_projects_and_full_descriptions_are_shown) ... ok
+test_portfolio_without_projects_shows_helpful_message (portfolio_app.tests.PortfolioDetailViewTests.test_portfolio_without_projects_shows_helpful_message) ... ok
+test_multiple_projects_and_relationship_queries (portfolio_app.tests.RelationshipTests.test_multiple_projects_and_relationship_queries) ... ok
+test_one_portfolio_per_student (portfolio_app.tests.RelationshipTests.test_one_portfolio_per_student) ... ok
+test_portfolio_deletion_preserves_student (portfolio_app.tests.RelationshipTests.test_portfolio_deletion_preserves_student) ... ok
+test_public_pages_and_inactive_visibility (portfolio_app.tests.RelationshipTests.test_public_pages_and_inactive_visibility) ... ok
+test_student_deletion_cascades (portfolio_app.tests.RelationshipTests.test_student_deletion_cascades) ... ok
+test_admin_requires_login_and_can_add_student (portfolio_app.tests.StudentTests.test_admin_requires_login_and_can_add_student) ... ok
+test_student_persistence_and_major_query (portfolio_app.tests.StudentTests.test_student_persistence_and_major_query) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 14.341s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
