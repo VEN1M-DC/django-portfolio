@@ -1,0 +1,8 @@
+{% extends 'portfolio_app/base.html' %}
+{% block title %}{% if object %}Update{% else %}Create{% endif %} Student{% endblock %}
+{% block content %}
+<h1>{% if object %}Update{% else %}Create{% endif %} Student</h1>
+<form method="post">{% csrf_token %}{{ form.as_p }}
+<div class="actions"><button type="submit">Save student</button><a href="{% url 'student-list' %}">Cancel</a></div>
+</form>
+{% endblock %}

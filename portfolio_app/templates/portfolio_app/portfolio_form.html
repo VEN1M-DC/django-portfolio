@@ -1,0 +1,9 @@
+{% extends 'portfolio_app/base.html' %}
+{% block title %}Create Portfolio{% endblock %}
+{% block content %}
+<h1>Create Portfolio</h1>
+<p>Select an existing student. Each student can have one portfolio.</p>
+<form method="post">{% csrf_token %}{{ form.as_p }}
+<div class="actions"><button type="submit">Save portfolio</button><a href="{% url 'student-list' %}">Cancel</a></div>
+</form>
+{% endblock %}

@@ -11,12 +11,16 @@
     a{color:#174da0}a:focus-visible{outline:3px solid #b45309;outline-offset:4px}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:24px}
     article{background:white;padding:24px;border:1px solid #d5deea;border-radius:12px}
+    nav{display:flex;flex-wrap:wrap;gap:16px}label{display:block;font-weight:600}
+    input,select,textarea,button{font:inherit;max-width:100%;box-sizing:border-box;padding:8px;border:1px solid #64748b;border-radius:4px}
+    input:not([type=checkbox]),select,textarea{width:100%}form{max-width:680px}button{background:#174da0;color:white;cursor:pointer}
+    .errorlist{color:#9f1239}.danger{background:#9f1239}.actions{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
     h1,h2{line-height:1.25}h1{font-size:2.4rem}.muted{color:#4b5b70}.skip{position:absolute;left:-9999px}.skip:focus{left:10px;top:10px;background:white;padding:10px}
   </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header><a href="{% url 'portfolio-list' %}">Student Portfolios</a><nav aria-label="Main"><a href="{% url 'admin:index' %}">Admin login</a></nav></header>
+<header><a href="{% url 'portfolio-list' %}">Student Portfolios</a><nav aria-label="Main">{% if perms.portfolio_app.view_student %}<a href="{% url 'student-list' %}">Manage students</a>{% endif %}<a href="{% url 'admin:index' %}">Admin login</a></nav></header>
 <main id="main">{% block content %}{% endblock %}</main>
 <footer class="muted">Django portfolio course project · Example portfolios use fictional students.</footer>
 </body>

@@ -5,6 +5,7 @@
 <p><strong>Status:</strong> {{ portfolio.is_active|yesno:"Active,Inactive" }}</p>
 {{ portfolio.about|linebreaks }}<p><strong>Contact:</strong> <a href="mailto:{{ portfolio.contact_email }}">{{ portfolio.contact_email }}</a></p>
 <h2>Projects</h2>
+{% if perms.portfolio_app.add_project and perms.portfolio_app.view_student %}<p><a href="{% url 'project-create' %}?portfolio={{ portfolio.pk }}">Add project</a></p>{% endif %}
 <div class="grid">
 {% for project in portfolio.projects.all %}
 <article>

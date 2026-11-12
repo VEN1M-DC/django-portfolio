@@ -20,7 +20,14 @@ from portfolio_app import views
 
 urlpatterns = [
     path('', views.portfolio_list, name='portfolio-list'),
+    path('students/', views.StudentListView.as_view(), name='student-list'),
+    path('students/create/', views.StudentCreateView.as_view(), name='student-create'),
+    path('students/<int:pk>/', views.StudentDetailView.as_view(), name='student-detail'),
+    path('students/<int:pk>/update/', views.StudentUpdateView.as_view(), name='student-update'),
+    path('students/<int:pk>/delete/', views.StudentDeleteView.as_view(), name='student-delete'),
+    path('portfolios/create/', views.PortfolioCreateView.as_view(), name='portfolio-create'),
     path('portfolios/<int:pk>/', views.PortfolioDetailView.as_view(), name='portfolio-detail'),
+    path('projects/create/', views.ProjectCreateView.as_view(), name='project-create'),
     path('projects/<int:pk>/', views.project_detail, name='project-detail'),
     path('admin/', admin.site.urls),
 ]

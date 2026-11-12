@@ -2,6 +2,22 @@
 
 Course project with the Student model and Django admin.
 
+## L22: Student and portfolio workflow
+
+Sign in through `/admin/`, then choose **Manage students**. Authorized accounts
+can list, create, edit, and delete students using the application pages. Creating
+a student opens that new student's detail page. **Create Portfolio** appears only
+when the student has no portfolio; the form includes an existing-student selector.
+Each portfolio can then receive multiple projects through **Add project**.
+
+Delete uses a confirmation page and POST. Deleting a student also deletes their
+portfolio and projects. Public pages continue to hide inactive portfolios.
+The new management pages check Django model permissions; a local superuser has
+all required permissions. Student records are not login accounts.
+
+See [L22 workflow and verification](Documents/L22_WORKFLOW.md) for requirements,
+routes, design decisions, and test results.
+
 ## GE04: Portfolio views
 
 The portfolio detail route now uses `PortfolioDetailView`, a generic Django
